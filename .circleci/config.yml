@@ -81,8 +81,7 @@ jobs:
           command: docker push $IMAGE:$CIRCLE_SHA1 && docker push $IMAGE:latest
 
   publish:
-    docker:
-      - image: debian:9.4
+    <<: *node
     steps:
       - attach_workspace:
           at: .
