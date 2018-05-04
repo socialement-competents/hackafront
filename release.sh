@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ "x${GITHUB_API_TOKEN}" = "x" ]; then
+if [ -z "${GITHUB_API_TOKEN}" ]; then
   echo "Please add the GITHUB_API_TOKEN env var"
   exit 1
 fi
 
-if [ "x${CIRCLE_TAG}" = "x" || "x${CIRCLE_BRANCH}" = "x" ]; then
+if [ -z "${CIRCLE_TAG}" || -z "${CIRCLE_BRANCH}" ]; then
   echo "Run this script in Circle CI (or setup CIRCLE_TAG and CIRCLE_BRANCH manually to test)"
   exit 1
 fi

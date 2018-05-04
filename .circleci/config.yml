@@ -81,7 +81,8 @@ jobs:
           command: docker push $IMAGE:$CIRCLE_SHA1 && docker push $IMAGE:latest
 
   publish:
-    machine: true
+    docker:
+      - image: debian:9.4
     steps:
       - attach_workspace:
           at: .
@@ -119,8 +120,6 @@ workflows:
           filters:
             branches:
               only: master
-            tags:
-              only: /.*/
       - publish:
           requires:
             - build
