@@ -90,10 +90,8 @@ jobs:
           name: Zip and publish the built files to Github Releases
           command: |
             apt-get update &&
-            apt-get install -y zip &&
-            ls &&
+            apt-get install -y zip jq &&
             cd dist &&
-            ls &&
             chmod +x ../release.sh &&
             ../release.sh
 
