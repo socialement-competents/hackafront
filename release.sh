@@ -1,9 +1,8 @@
 #!/bin/sh
 
-# Install github_release
 GITHUB_RELEASE_GO=https://github.com/tsauvajon/github-release/releases/download/v0.7.2/linux-amd64-github-release
-GR=./github_release
-curl -s $GITHUB_RELEASE_GO --output $GR
+curl -sL $GITHUB_RELEASE_GO | tar xvjf -
+GR=bin/linux/amd64/github-release
 chmod +x $GR
 
 # Create a GitHub release
