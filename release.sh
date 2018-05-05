@@ -13,7 +13,7 @@ $GR release \
   --name $CIRCLE_TAG
 
 # Add all files and folders, recursively, to a tag-named .zip 
-FILENAME="$REPO-$CIRCLE_TAG.zip"
+FILENAME="$CIRCLE_PROJECT_REPONAME-$CIRCLE_TAG.zip"
 zip -r $FILENAME *
 
 # Upload the .zip to the release as an asset
