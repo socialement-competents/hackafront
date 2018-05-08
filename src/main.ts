@@ -12,7 +12,11 @@ import router from '@/app/router'
 Vue.config.productionTip = false
 
 const httpLink = new HttpLink({
+<<<<<<< HEAD
   uri: `https://${process.env.SERVER_HOST || 'localhost'}:${process.env.SERVER_PORT || '3333'}/graphql`
+=======
+  uri: `https://${process.env.SERVER_HOST || 'localhost'}:${process.env.SERVER_PORT || '3333'}`
+>>>>>>> 4771e008861b5426d6a84d05b38f5bd7a0f7fc18
 })
 
 const apolloClient = new ApolloClient({
