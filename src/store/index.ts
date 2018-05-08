@@ -10,7 +10,7 @@ interface State {
   login: boolean
 }
 
-let state: State = {
+const state: State = {
   login: false
 }
 
