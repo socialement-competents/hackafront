@@ -1,8 +1,8 @@
 import gql from 'graphql-tag'
 
 export const REGISTER = gql`
-mutation register($login: String!, $password: String!) {
-  addUser(username: $login, password: $password) {
+mutation register($username: String!, $password: String!) {
+  addUser(username: $username, password: $password) {
     id,
     email,
     firstname,
