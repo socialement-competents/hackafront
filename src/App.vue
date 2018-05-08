@@ -9,10 +9,29 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
+import { REGISTER } from '@/users/mutations'
+import { GET_USERS, GET_USER_BY_ID } from '@/users/queries'
+import { VueApolloOptions } from 'vue-apollo/types/vue-apollo'
+
 @Component
 export default class App extends Vue {
-  msg:string = 'Welcome to Your Vue.js App'
-  name:string = 'app'
+  msg: string = 'Welcome to Your Vue.js App'
+  name: string = 'app'
+  get apollo () {
+    return {
+      users: {
+        query: GET_USERS,
+        prefetch: true
+      },
+      userById: {
+        query: GET_USER_BY_ID,
+        prefetch: true,
+        variables (): UserById.Variables {
+          return { id: 1 }
+        }
+      }
+    }
+  }
 }
 </script>
 
