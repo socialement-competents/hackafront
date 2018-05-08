@@ -4,4 +4,4 @@
 /*.js
 /test/unit/coverage/
 /src/typings/vue-shims.d.ts
-**/generatedSchema.ts
+/src/typings/types.ts
