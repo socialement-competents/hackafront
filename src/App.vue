@@ -11,7 +11,7 @@ import Component from 'vue-class-component'
 
 import { REGISTER } from '@/users/mutations'
 import { GET_USERS, GET_USER_BY_ID } from '@/users/queries'
-import { VueApolloOptions } from 'vue-apollo/types/vue-apollo'
+import { QueryToUserByIdArgs, MutationToRegisterArgs } from '@/app/graphql/generatedSchema'
 
 @Component
 export default class App extends Vue {
@@ -26,11 +26,23 @@ export default class App extends Vue {
       userById: {
         query: GET_USER_BY_ID,
         prefetch: true,
-        variables (): UserById.Variables {
-          return { id: 1 }
+        variables (): QueryToUserByIdArgs {
+          return { id: '1' }
         }
       }
     }
+  }
+
+  async greet () {
+    await this.$apollo.mutate({
+      mutation: REGISTER,
+      variables (): MutationToRegisterArgs {
+        return {
+          username: this.name,
+          password: this.msg
+        }
+      }
+    })
   }
 }
 </script>
