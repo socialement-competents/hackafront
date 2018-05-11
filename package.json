@@ -14,7 +14,7 @@
     "codacy:windows": "codacy-coverage < ./test/unit/coverage/lcov.info",
     "e2e": "node test/e2e/runner.js",
     "release": "echo \"git commit => git tag -a v1.0.0 -m \"miguel a la plage\" => git push origin --tags\"",
-    "gql": "gql-gen --schema http://localhost:3333/graphql --template graphql-codegen-typescript-template --out ./src/typings/ \"./src/**/*.graphql\"",
+    "gql": "gql-gen --schema $SERVER_URL --template graphql-codegen-typescript-template --out ./src/typings/ \"./src/**/*.graphql\"",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .ts,.js,.vue src test/unit/specs test/e2e/specs && tslint -c tslint.json 'src/**/*.ts' 'test/**/*.ts'",
     "build": "node build/build.js"
