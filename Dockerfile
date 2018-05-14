@@ -1,4 +1,5 @@
 FROM node:9.11.1-alpine as build
+LABEL maintainer="Thomas Sauvajon <thomas.sauvajon.dev@gmail.com>"
 WORKDIR /tmp/hackafront
 COPY . .
 RUN yarn
